@@ -1,0 +1,15 @@
+Nodemon:
+Realiza automaticamente a atualização do servidor node, para que nao precisamos 
+ficar abaixando e levantando o nosso node 'index.js' ou 'algo.js'
+comand: "npm install -D nodemon" || ou poderiamos utilizar no lugar do -D a seguinte
+frase "--save-dev" 
+
+Para utilizar adicionaremos la no package.json dentro de script um novo script com 
+o nome de "dev" que ira executar o comand > 'nodemon server.js'
+
+para utilizamos esse escript basta executar o seguinte comand > 'npm run dev'
+;
+
+
+
+

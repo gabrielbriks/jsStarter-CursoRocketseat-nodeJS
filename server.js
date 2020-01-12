@@ -19,7 +19,7 @@ const app  = express();
  * resposta.
  */
 app.get('/', (req,res) => {
-  res.send('<b>Hello GabrielBriks ... </b>');
+  res.send('<b> <i>Hello GabrielBriks ... </i></b>');
 });
 
 /**
