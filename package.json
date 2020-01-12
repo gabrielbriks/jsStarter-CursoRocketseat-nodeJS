@@ -1,0 +1,22 @@
+{
+  "name": "jsstarter-cursorocketseat-nodejs",
+  "version": "1.0.0",
+  "description": "curso nodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielbriks/jsStarter-CursoRocketseat-nodeJS.git"
+  },
+  "author": "gabrielbriks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielbriks/jsStarter-CursoRocketseat-nodeJS/issues"
+  },
+  "homepage": "https://github.com/gabrielbriks/jsStarter-CursoRocketseat-nodeJS#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
