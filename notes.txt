@@ -10,6 +10,10 @@ o nome de "dev" que ira executar o comand > 'nodemon server.js'
 para utilizamos esse escript basta executar o seguinte comand > 'npm run dev'
 ;
 
+Mongoose: 
+    É um ORM, o ORM incapsula a logica das operações do banco de dados atraves do codigo,
+    ou seja, ao invés de utilizarmos as queryes, utilizamos o proprio js.
+    
 
 
 

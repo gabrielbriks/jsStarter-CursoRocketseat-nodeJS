@@ -1,7 +1,11 @@
 //importando a lib express
 const express = require('express');
+const mongoose = require('mongoose');
 
 const app  = express();
+
+//Iniciando Banco de Dados
+mongoose.connect('mongodb://localhost:27017/nodeapi', { useNewUrlParser: true, useUnifiedTopology: true  });
 
 /**
  * Estamos definindo a rota inicial da nossa aplication, para isso so iremos adicionar 
@@ -18,7 +22,7 @@ const app  = express();
  * O Res, sera a resposta que iremos dar a requisição, estarao todas as informações para mandarmos a
  * resposta.
  */
-app.get('/', (req,res) => {
+app.get('/', (req, res) => {
   res.send('<b> <i>Hello GabrielBriks ... </i></b>');
 });
 
