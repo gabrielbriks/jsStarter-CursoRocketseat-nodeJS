@@ -1,11 +1,20 @@
 //importando a lib express
 const express = require('express');
 const mongoose = require('mongoose');
-
+const requireDir = require('require-dir');
 const app  = express();
 
 //Iniciando Banco de Dados
-mongoose.connect('mongodb://localhost:27017/nodeapi', { useNewUrlParser: true, useUnifiedTopology: true  });
+mongoose.connect('mongodb://localhost:27017/nodeapi', 
+  { 
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }
+);
+
+requireDir('./src/models/');
+
+const Product = mongoose.model('Product');
 
 /**
  * Estamos definindo a rota inicial da nossa aplication, para isso so iremos adicionar 
@@ -22,8 +31,16 @@ mongoose.connect('mongodb://localhost:27017/nodeapi', { useNewUrlParser: true, u
  * O Res, sera a resposta que iremos dar a requisição, estarao todas as informações para mandarmos a
  * resposta.
  */
+
+ 
 app.get('/', (req, res) => {
-  res.send('<b> <i>Hello GabrielBriks ... </i></b>');
+  Product.create({
+    title: 'React Native',
+    description: 'Build native',
+    url: 'http://github.com/facebook/react-native'
+  });
+
+  return res.send('<b> <i>Hello GabrielBriks ... </i></b>');
 });
 
 /**

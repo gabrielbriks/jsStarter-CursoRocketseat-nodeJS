@@ -10,10 +10,43 @@ o nome de "dev" que ira executar o comand > 'nodemon server.js'
 para utilizamos esse escript basta executar o seguinte comand > 'npm run dev'
 ;
 
+# Preparando a maquina no docker para utilizar o mongo db;
+	- realize o primeiro comando: >> ' docker pull mongo '
+		Apos realizar esse comando ele irá buscar e 
+		realizar o download de uma imagem do ambiente
+		mongo em linux para configurarmos.
+
+	- Apos o download e instalação dessa maquina docker,
+	iremos precisar subir essa maquina, e para isso iremos
+	dar um nome para ela com o seguinte comando: 
+		>> 'docker run --name mongodb -p 27017:27017 -d mongo'
+		#descricao dos parametros:
+			--name: nome da maquina
+			-p: definição da porta de acesso(port default do mongo is 27017)
+			-d: defini a imagem que queremos usar
+
+	- Apos isso podemos rodar um comando para mostrar todas as maquinas
+	que estao rodando: Comand >> 'docker ps'
+
+		Para exibir todas as maquinas: Comand >> 'docker ps -a' 
+        Para iniciar uma maquina que está em stop: Comand >> 'docker start <name-machine>
+
+
 Mongoose: 
     É um ORM, o ORM incapsula a logica das operações do banco de dados atraves do codigo,
     ou seja, ao invés de utilizarmos as queryes, utilizamos o proprio js.
     
+Lib 'require-dir':
+    O require-dir realiza automaticamente um require em um diretorio especifico. Assim 
+    não precisaremos ficar dando repitidos requires em Schemas do mondo por exemplo.
+    Comand > npm install require-dir
+
+    Exemplo de utilização: 
+        Antes da Lib >> require('./src/models/models');
+
+        Depois da Lib >> requireDir('./src/models');
+
+
 
 
 
