@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const requireDir = require('require-dir');
 const app  = express();
 
+//estou dizendo para permitir que eu envie dados para a minha aplication com formato json
+app.use(express.json());
+
 //Iniciando Banco de Dados
 mongoose.connect('mongodb://localhost:27017/nodeapi', 
   { 
@@ -11,37 +14,18 @@ mongoose.connect('mongodb://localhost:27017/nodeapi',
     useUnifiedTopology: true
   }
 );
-
 requireDir('./src/models/');
 
-const Product = mongoose.model('Product');
 
-/**
- * Estamos definindo a rota inicial da nossa aplication, para isso so iremos adicionar 
- * apenas uma barra, 
- * em nosso segundo Parametro, iramos definir uma função que recebera dois paramtero 
- * 'req' & 'res'; O 'req' quer dizer uma requisição & o 'res' quer dizer o nosso response.
- * 
- * Entao por exemplo, quando atualizarmos a page, nesse momento estamo realizando uma requisicao
- * para o nosso servidor(server), e todos as informações da requisição estara dentro dessa 'resq'.
- * 
- * Como:
- *    Paramentro, corpo da requisição, cabeçalho, autenticação, id e por aí vai
- * 
- * O Res, sera a resposta que iremos dar a requisição, estarao todas as informações para mandarmos a
- * resposta.
- */
+/* O 'use' se comporta como se fosse um curinga, que consegue
+receber todos os tipos de requisições como GET, POST etc...
 
- 
-app.get('/', (req, res) => {
-  Product.create({
-    title: 'React Native',
-    description: 'Build native',
-    url: 'http://github.com/facebook/react-native'
-  });
+A linha Abaixo diz:  toda vez que e recebermos uma requisição
+apartir da rota '/api', mandaremos para o nosso arquivos routes
+*/
+app.use('/api', require('./src/routes'))
 
-  return res.send('<b> <i>Hello GabrielBriks ... </i></b>');
-});
+
 
 /**
  *  falando para o app que no caso é o express, ficar ouvindo a porta definida no parametro.
