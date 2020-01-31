@@ -6,9 +6,14 @@ const Product = mongoose.model('Product');
 
 module.exports = {
     //buscar todos
-    async index(req, res){
-        const products = await Product.find();        
-        return res.json(products);
+    async index(req, res){                                                                             
+        const { page =1 } = req.query; //Page = 1 ?? Pq se ele nao encontrar o parametro define 1 como default
+        const products = await Product.paginate({ /*Condições Where, etc*/ },{ page, limit:10 });  //Trocando o 'find()' para 'paginate', assim já estara implementado a paginação      
+        return res.json(products);                                                                  
+        /*
+            page: "Pagina atual";   limit: "qdt maxiam de registros"
+            Na URL buscamos o parametro page='numero da pag', exemplo: "/products?page=2";
+        */
     },
 
     //Rota de detalhe (apenas um)

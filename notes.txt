@@ -47,6 +47,10 @@ Lib 'require-dir':
         Depois da Lib >> requireDir('./src/models');
 
 
+Mongoose-Paginate:
+	Utilizamos esse modulo/lib para criar paginações em nossa aplicação.
+		Comand >> 'yarn add mongoose-paginate'
+	
 
 
 
