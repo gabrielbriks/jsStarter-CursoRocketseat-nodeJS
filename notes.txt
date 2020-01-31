@@ -50,7 +50,10 @@ Lib 'require-dir':
 Mongoose-Paginate:
 	Utilizamos esse modulo/lib para criar paginações em nossa aplicação.
 		Comand >> 'yarn add mongoose-paginate'
-	
+
+CORS:
+	Iremos instalar o cors para adicionar a possibilidade de nossa api ser acessada 
+	por outros endereços.
 
 
 

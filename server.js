@@ -1,12 +1,13 @@
 //importando a lib express
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const requireDir = require('require-dir');
 const app  = express();
 
 //estou dizendo para permitir que eu envie dados para a minha aplication com formato json
 app.use(express.json());
-
+app.use(cors()); //estando vazio, deixamos o acesso livre para qualquer dominio
 //Iniciando Banco de Dados
 mongoose.connect('mongodb://localhost:27017/nodeapi', 
   { 
