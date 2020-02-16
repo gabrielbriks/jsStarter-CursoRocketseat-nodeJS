@@ -10,6 +10,25 @@ o nome de "dev" que ira executar o comand > 'nodemon server.js'
 para utilizamos esse escript basta executar o seguinte comand > 'npm run dev'
 ;
 
+Docker:
+Realizaremos o download do docker no site oficial, após a conclusão do download e a instalação,
+iremos subir uma maquina ubuntu(sendo um container) para configurarmos e poremos usar o nosso
+ "mongodb".
+
+Para isso seguiremos o seguintes passsos:
+  - para conferir se foi de fato instalado o "docker" basta dar o seguinte comand > 'docker' , 
+  que irá listar a lista de todos os comandos do proprio docker. 
+
+    Dando tudo certo seguiremos.. 
+  
+  - Agora insira no terminal o seguinte comand > 'docker pull mongo' , esse comando irá nos trazer
+  o container com o mongo instalado;
+
+  -Agora iremos para as configurações de nosso container e o mongodb;
+    
+    # Insira o seguinte comand > 'doc'
+
+
 # Preparando a maquina no docker para utilizar o mongo db;
 	- realize o primeiro comando: >> ' docker pull mongo '
 		Apos realizar esse comando ele irá buscar e 
